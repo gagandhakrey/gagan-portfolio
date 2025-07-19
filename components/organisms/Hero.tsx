@@ -10,7 +10,8 @@ import {
   UserIcon,
   ChevronDownIcon,
   SparklesIcon,
-  ArrowDownIcon
+  ArrowDownIcon,
+  ArrowDownTrayIcon
 } from '@heroicons/react/24/outline';
 import { Button } from '@/components/atoms/Button';
 
@@ -139,6 +140,16 @@ export function Hero() {
             >
               <span>View Projects</span>
               <CodeBracketIcon className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
+            </Button>
+
+            <Button
+              variant="ghost"
+              size="lg"
+              onClick={() => window.open('https://drive.google.com/uc?export=download&id=11n7Id_jHKG1taPbnBldxkUbiTHzPYQ5q', '_blank')}
+              className="group"
+            >
+              <span>Download Resume</span>
+              <ArrowDownTrayIcon className="w-4 h-4 ml-2 group-hover:translate-y-1 transition-transform" />
             </Button>
           </motion.div>
         </div>

@@ -37,7 +37,7 @@ export function Hero() {
 
   return (
           <section id="hero" className="section-offset relative flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
-      <div className="container-glass text-center max-w-5xl">
+      <div className="container-glass text-center max-w-5xl mt-24">
         <div className="space-y-8 md:space-y-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

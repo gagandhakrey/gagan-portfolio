@@ -260,19 +260,6 @@ export function AboutSection() {
                   ))}
                 </div>
               </div>
-
-              {/* Fun Fact */}
-              <div className="glass-card border-accent/20">
-                <div className="flex items-center gap-3 mb-4">
-                  <SparklesIcon className="w-6 h-6 text-accent animate-pulse" />
-                  <h3 className="text-lg font-semibold text-accent">Fun Fact</h3>
-                </div>
-                <p className="text-muted-foreground">
-                  I've optimized systems that process millions of transactions daily, 
-                  reducing latency by up to 60% and improving success rates by 12% 
-                  through intelligent routing and performance optimizations.
-                </p>
-              </div>
             </motion.div>
           </div>
         </motion.div>

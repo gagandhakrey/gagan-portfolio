@@ -25,6 +25,7 @@ export interface Achievement {
   metric?: string; 
   icon?: string; 
   year?: number; 
+  category?: string;
 }
 
 export interface Testimonial {

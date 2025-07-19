@@ -2,6 +2,7 @@ import { Hero } from '@/components/organisms/Hero';
 import { AboutSection } from '@/components/organisms/AboutSection';
 import { ExperienceTimeline } from '@/components/organisms/ExperienceTimeline';
 import { ProjectsGrid } from '@/components/organisms/ProjectsGrid';
+import { AchievementsSection } from '@/components/organisms/AchievementsSection';
 import { ContactSection } from '@/components/organisms/ContactSection';
 import { personJsonLd, websiteJsonLd } from '@/lib/seo';
 
@@ -26,6 +27,7 @@ export default function HomePage() {
         <AboutSection />
         <ExperienceTimeline />
         <ProjectsGrid />
+        <AchievementsSection />
         <ContactSection />
       </main>
     </>

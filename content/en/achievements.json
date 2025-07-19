@@ -1,56 +1,50 @@
 [
   {
     "title": "JEE Advanced",
-    "subtitle": "All India Rank (AIR) 5107",
-    "metric": "General Category",
-    "year": 2018
+    "subtitle": "Secured All India Rank (AIR) 5107 in JEE Advanced 2018 under the General Category",
+    "metric": "AIR 5107",
+    "year": 2018,
+    "category": "Academic Excellence",
+    "icon": "trophy"
   },
   {
     "title": "Gem Award",
-    "subtitle": "Highest Engineering Excellence Award",
-    "metric": "Cashfree Payments",
-    "year": 2024
+    "subtitle": "Earned the highest engineering excellence award at Cashfree Payments",
+    "metric": "Highest Award",
+    "year": 2024,
+    "category": "Professional Achievement",
+    "icon": "award"
   },
   {
     "title": "Internshala Recognition",
-    "subtitle": "Outstanding Performer",
-    "metric": "Campus Ambassador Program",
-    "year": 2021
+    "subtitle": "Recognized as an outstanding performer in the Campus Ambassador Program",
+    "metric": "Outstanding Performer",
+    "year": 2021,
+    "category": "Leadership Excellence",
+    "icon": "star"
   },
   {
     "title": "API Performance Optimization",
     "subtitle": "Router Latency Reduction",
     "metric": "60% improvement",
-    "year": 2024
+    "year": 2024,
+    "category": "Technical Achievement",
+    "icon": "bolt"
   },
   {
     "title": "Transaction Success Rate",
     "subtitle": "Dynamic Routing via TSDB",
     "metric": "12% improvement",
-    "year": 2024
-  },
-  {
-    "title": "Database Performance",
-    "subtitle": "Query Optimization",
-    "metric": "Significant improvement",
-    "year": 2023
+    "year": 2024,
+    "category": "Technical Achievement",
+    "icon": "chart"
   },
   {
     "title": "System Architecture",
     "subtitle": "Plugin-based Payment Router",
-    "metric": "From scratch",
-    "year": 2023
-  },
-  {
-    "title": "Team Mentoring",
-    "subtitle": "New Joiners Guidance",
-    "metric": "2 engineers",
-    "year": 2024
-  },
-  {
-    "title": "Tech Stack Upgrade",
-    "subtitle": "MySQL & Java Versions",
-    "metric": "Led migration",
-    "year": 2023
+    "metric": "Built from scratch",
+    "year": 2023,
+    "category": "Technical Achievement",
+    "icon": "cpu"
   }
 ] 

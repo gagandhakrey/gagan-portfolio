@@ -186,4 +186,4 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-Built with ❤️ using Next.js, TypeScript, and Tailwind CSS. 
+Built with ❤️ using Next.js, TypeScript, and Tailwind CSS. # gagan-portfolio

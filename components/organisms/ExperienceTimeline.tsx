@@ -3,121 +3,56 @@
 import { motion } from 'framer-motion';
 import { 
   BriefcaseIcon,
-  CalendarIcon,
-  MapPinIcon,
   BuildingOfficeIcon,
-  ChevronRightIcon,
-  CheckBadgeIcon
+  MapPinIcon,
+  CalendarIcon,
+  CheckBadgeIcon,
+  CpuChipIcon,
+  CodeBracketIcon,
+  ServerIcon,
+  CloudIcon,
+  BoltIcon
 } from '@heroicons/react/24/outline';
 import { experience } from '@/content';
 
+// Icon mapping for different technologies
 const getTechIcon = (tech: string) => {
-  const techName = tech.toLowerCase();
-  
-  // Programming Languages
-  if (techName.includes('java')) return 'fab fa-java';
-  if (techName.includes('javascript')) return 'fab fa-js-square';
-  if (techName.includes('node') || techName.includes('nodejs')) return 'fab fa-node-js';
-  if (techName.includes('python')) return 'fab fa-python';
-  if (techName.includes('html')) return 'fab fa-html5';
-  if (techName.includes('css')) return 'fab fa-css3-alt';
-  
-  // Frameworks & Libraries
-  if (techName.includes('spring')) return 'fas fa-leaf';
-  if (techName.includes('react')) return 'fab fa-react';
-  if (techName.includes('express')) return 'fas fa-server';
-  if (techName.includes('ejs')) return 'fas fa-file-code';
-  
-  // Databases
-  if (techName.includes('mysql')) return 'fas fa-database';
-  if (techName.includes('mongodb')) return 'fas fa-leaf';
-  if (techName.includes('database')) return 'fas fa-database';
-  
-  // Caching & Memory
-  if (techName.includes('redis')) return 'fas fa-memory';
-  if (techName.includes('cache')) return 'fas fa-bolt';
-  
-  // Message Queues & Event Systems
-  if (techName.includes('kafka')) return 'fas fa-stream';
-  if (techName.includes('sqs')) return 'fas fa-inbox';
-  if (techName.includes('sns')) return 'fas fa-bullhorn';
-  if (techName.includes('maxwell')) return 'fas fa-sync';
-  if (techName.includes('queue')) return 'fas fa-list-ol';
-  if (techName.includes('event')) return 'fas fa-bolt';
-  
-  // Cloud & Infrastructure
-  if (techName.includes('aws')) return 'fab fa-aws';
-  if (techName.includes('cloud')) return 'fas fa-cloud';
-  if (techName.includes('docker')) return 'fab fa-docker';
-  if (techName.includes('container')) return 'fas fa-box';
-  
-  // Monitoring & Observability
-  if (techName.includes('datadog')) return 'fas fa-chart-line';
-  if (techName.includes('grafana')) return 'fas fa-chart-bar';
-  if (techName.includes('temporal')) return 'fas fa-clock';
-  if (techName.includes('monitor')) return 'fas fa-chart-line';
-  if (techName.includes('tsdb')) return 'fas fa-chart-bar';
-  
-  // DevOps & CI/CD
-  if (techName.includes('jenkins')) return 'fas fa-tools';
-  if (techName.includes('bitbucket')) return 'fab fa-bitbucket';
-  if (techName.includes('pipeline')) return 'fas fa-code-branch';
-  if (techName.includes('liquibase')) return 'fas fa-tint';
-  
-  // Security & Authentication
-  if (techName.includes('jwt')) return 'fas fa-key';
-  if (techName.includes('auth')) return 'fas fa-lock';
-  if (techName.includes('security')) return 'fas fa-shield-alt';
-  
-  // Architecture & Patterns
-  if (techName.includes('microservice')) return 'fas fa-cubes';
-  if (techName.includes('spi')) return 'fas fa-plug';
-  if (techName.includes('reactive')) return 'fas fa-water';
-  if (techName.includes('jar')) return 'fas fa-archive';
-  if (techName.includes('loading')) return 'fas fa-cog';
-  
-  // Web Technologies
-  if (techName.includes('canvas')) return 'fas fa-palette';
-  if (techName.includes('api')) return 'fas fa-link';
-  
-  // Game Development
-  if (techName.includes('game')) return 'fas fa-gamepad';
-  if (techName.includes('logic')) return 'fas fa-brain';
-  
-  // Data & Structures
-  if (techName.includes('data structures')) return 'fas fa-project-diagram';
-  if (techName.includes('algorithm')) return 'fas fa-calculator';
-  if (techName.includes('indexing')) return 'fas fa-sort';
-  
-  // Generic fallback
-  if (techName.includes('programming')) return 'fas fa-code';
-  if (techName.includes('frontend')) return 'fas fa-desktop';
-  if (techName.includes('backend')) return 'fas fa-server';
-  
-  return 'fas fa-cog';
+  const name = tech.toLowerCase();
+  if (name.includes('java') || name.includes('spring')) return CodeBracketIcon;
+  if (name.includes('microservice') || name.includes('architecture')) return CpuChipIcon;
+  if (name.includes('cloud') || name.includes('aws')) return CloudIcon;
+  if (name.includes('server') || name.includes('backend')) return ServerIcon;
+  return BoltIcon; // Default icon
 };
 
 export function ExperienceTimeline() {
   return (
-    <section id="experience" className="py-24">
-      <div className="container mx-auto px-4">
+    <section id="experience" className="section-spacing">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="container-glass"
         >
-          <div className="flex items-center justify-center gap-3 mb-12">
-            <BriefcaseIcon className="w-8 h-8 text-accent" />
-            <h2 className="text-3xl md:text-4xl font-bold text-center">
-              Experience
-            </h2>
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <BriefcaseIcon className="w-8 h-8 text-accent" />
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Experience
+              </h2>
+            </div>
+            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-6"></div>
+            
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              My professional journey in backend engineering, system architecture, and performance optimization.
+            </p>
           </div>
           
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border transform -translate-x-1/2"></div>
+          <div className="relative max-w-4xl mx-auto">
+            {/* Enhanced timeline line with gradient */}
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary transform -translate-x-1/2 opacity-30"></div>
             
             <div className="space-y-12">
               {experience.map((item, index) => (
@@ -131,15 +66,15 @@ export function ExperienceTimeline() {
                     index % 2 === 0 ? 'md:flex-row-reverse' : ''
                   }`}
                 >
-                  {/* Timeline dot with status indicator */}
+                  {/* Enhanced timeline dot with glass effect */}
                   <div className="absolute left-4 md:left-1/2 top-8 transform -translate-x-1/2 z-10">
                     <div className="relative">
-                      <div className="w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
-                      {/* Green status indicator for current position */}
+                      <div className="w-6 h-6 bg-gradient-to-br from-primary to-accent rounded-full border-4 border-background shadow-liquid"></div>
+                      {/* Status indicator for current position */}
                       {item.end === 'Present' && (
                         <div className="absolute -top-1 -right-1">
-                          <div className="w-6 h-6 bg-green-500 rounded-full border-2 border-background flex items-center justify-center">
-                            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                          <div className="w-4 h-4 bg-green-500 rounded-full border-2 border-background flex items-center justify-center animate-pulse">
+                            <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
                           </div>
                         </div>
                       )}
@@ -149,7 +84,7 @@ export function ExperienceTimeline() {
                   <div className={`w-full md:w-1/2 ${
                     index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
                   }`}>
-                    <div className="bg-secondary/60 backdrop-blur-sm rounded-lg p-6 border border-border hover:border-accent/50 transition-colors group">
+                    <div className="glass-card hover:shadow-liquid-hover transition-all duration-300 group hover:scale-[1.02] hover:-translate-y-1">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-2">
@@ -171,46 +106,98 @@ export function ExperienceTimeline() {
                             </h4>
                           </div>
                           
-                          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                            <div className="flex items-center gap-1">
-                              <CalendarIcon className="w-4 h-4" />
-                              <span>{item.start} - {item.end}</span>
+                          {item.location && (
+                            <div className="flex items-center gap-2 mb-3">
+                              <MapPinIcon className="w-4 h-4 text-muted-foreground" />
+                              <p className="text-sm text-muted-foreground">
+                                {item.location}
+                              </p>
                             </div>
-                            {item.location && (
-                              <div className="flex items-center gap-1">
-                                <MapPinIcon className="w-4 h-4" />
-                                <span>{item.location}</span>
-                              </div>
-                            )}
+                          )}
+                          
+                          <div className="flex items-center gap-2 mb-4">
+                            <CalendarIcon className="w-4 h-4 text-accent" />
+                            <span className="text-sm font-medium text-accent">
+                              {item.start} - {item.end || 'Present'}
+                            </span>
                           </div>
                         </div>
                       </div>
                       
-                      <ul className="space-y-3 mb-4">
-                        {item.impacts.map((impact, impactIndex) => (
-                          <li key={impactIndex} className="flex items-start gap-3 text-muted-foreground group-hover:text-foreground transition-colors">
-                            <ChevronRightIcon className="w-4 h-4 mt-0.5 text-accent flex-shrink-0" />
-                            <span className="text-sm leading-relaxed">{impact}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      {/* Key impacts with glass styling */}
+                      <div className="mb-6">
+                        <h5 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                          <BoltIcon className="w-4 h-4 text-accent" />
+                          Key Impacts
+                        </h5>
+                        <div className="space-y-2">
+                          {item.impacts.slice(0, 3).map((impact, impactIndex) => (
+                            <div key={impactIndex} className="glass-subtle rounded-lg p-3 border border-accent/10">
+                              <p className="text-sm text-foreground leading-relaxed">
+                                {impact}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                       
-                      <div className="flex flex-wrap gap-2">
-                        {item.stack.map((tech, techIndex) => (
-                                                      <span
+                      {/* Tech stack */}
+                      <div>
+                        <h5 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                          <CpuChipIcon className="w-4 h-4 text-primary" />
+                          Technologies
+                        </h5>
+                        <div className="flex flex-wrap gap-2">
+                          {item.stack.map((tech, techIndex) => (
+                            <span
                               key={techIndex}
-                              className="flex items-center gap-1 px-3 py-1 bg-muted/50 hover:bg-muted rounded-full text-xs font-medium text-muted-foreground border border-border hover:border-accent/50 transition-all duration-300 group-hover:scale-105"
+                              className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium border border-primary/20 hover:bg-primary/20 hover:scale-105 transition-all duration-300 cursor-default"
                             >
-                              <i className={`${getTechIcon(tech)} text-sm`}></i>
                               {tech}
                             </span>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </motion.div>
               ))}
             </div>
+
+            {/* Call to action */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center mt-12"
+            >
+              <div className="glass-subtle rounded-2xl p-6 md:p-8">
+                <BriefcaseIcon className="w-12 h-12 text-accent mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  Ready for new challenges
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Looking to bring my expertise in backend engineering and system optimization to your team.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <button
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="btn-primary group"
+                  >
+                    <span>Let's Connect</span>
+                    <BriefcaseIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <button
+                    onClick={() => window.open('/resume.pdf', '_blank')}
+                    className="btn-secondary group"
+                  >
+                    <span>View Resume</span>
+                    <CalendarIcon className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

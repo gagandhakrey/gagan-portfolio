@@ -3,116 +3,39 @@
 import { motion } from 'framer-motion';
 import { 
   FolderOpenIcon,
-  RocketLaunchIcon,
-  CheckBadgeIcon,
-  ClockIcon,
   StarIcon,
+  ArrowTopRightOnSquareIcon,
   CodeBracketIcon,
+  RocketLaunchIcon,
   CpuChipIcon,
-  ServerIcon,
-  CloudIcon,
   ShieldCheckIcon,
+  CurrencyDollarIcon,
+  CloudIcon,
+  CommandLineIcon,
+  ServerIcon,
   BoltIcon,
-  ChevronRightIcon
+  ChartBarIcon,
+  CogIcon,
+  CircleStackIcon
 } from '@heroicons/react/24/outline';
+import { Button } from '@/components/atoms/Button';
 import { projects } from '@/content';
 import { useUIStore } from '@/store/uiStore';
-import { Button } from '@/components/atoms/Button';
 
+// Icon mapping for different project types
 const getProjectIcon = (projectName: string) => {
   const name = projectName.toLowerCase();
-  if (name.includes('payment') || name.includes('router')) return CpuChipIcon;
-  if (name.includes('reconciliation') || name.includes('settlement')) return ShieldCheckIcon;
-  if (name.includes('plugin') || name.includes('gateway')) return CodeBracketIcon;
-  if (name.includes('microservice') || name.includes('service')) return ServerIcon;
+  if (name.includes('payment') || name.includes('cashfree')) return CurrencyDollarIcon;
+  if (name.includes('microservice') || name.includes('architecture')) return CpuChipIcon;
+  if (name.includes('security') || name.includes('auth')) return ShieldCheckIcon;
   if (name.includes('cloud') || name.includes('aws')) return CloudIcon;
-  return RocketLaunchIcon;
-};
-
-const getTechIcon = (tech: string) => {
-  const techName = tech.toLowerCase();
-  
-  // Programming Languages
-  if (techName.includes('java')) return 'fab fa-java';
-  if (techName.includes('javascript')) return 'fab fa-js-square';
-  if (techName.includes('node') || techName.includes('nodejs')) return 'fab fa-node-js';
-  if (techName.includes('python')) return 'fab fa-python';
-  if (techName.includes('html')) return 'fab fa-html5';
-  if (techName.includes('css')) return 'fab fa-css3-alt';
-  
-  // Frameworks & Libraries
-  if (techName.includes('spring')) return 'fas fa-leaf';
-  if (techName.includes('react')) return 'fab fa-react';
-  if (techName.includes('express')) return 'fas fa-server';
-  if (techName.includes('ejs')) return 'fas fa-file-code';
-  
-  // Databases
-  if (techName.includes('mysql')) return 'fas fa-database';
-  if (techName.includes('mongodb')) return 'fas fa-leaf';
-  if (techName.includes('database')) return 'fas fa-database';
-  
-  // Caching & Memory
-  if (techName.includes('redis')) return 'fas fa-memory';
-  if (techName.includes('cache')) return 'fas fa-bolt';
-  
-  // Message Queues & Event Systems
-  if (techName.includes('kafka')) return 'fas fa-stream';
-  if (techName.includes('sqs')) return 'fas fa-inbox';
-  if (techName.includes('sns')) return 'fas fa-bullhorn';
-  if (techName.includes('maxwell')) return 'fas fa-sync';
-  if (techName.includes('queue')) return 'fas fa-list-ol';
-  if (techName.includes('event')) return 'fas fa-bolt';
-  
-  // Cloud & Infrastructure
-  if (techName.includes('aws')) return 'fab fa-aws';
-  if (techName.includes('cloud')) return 'fas fa-cloud';
-  if (techName.includes('docker')) return 'fab fa-docker';
-  if (techName.includes('container')) return 'fas fa-box';
-  
-  // Monitoring & Observability
-  if (techName.includes('datadog')) return 'fas fa-chart-line';
-  if (techName.includes('grafana')) return 'fas fa-chart-bar';
-  if (techName.includes('temporal')) return 'fas fa-clock';
-  if (techName.includes('monitor')) return 'fas fa-chart-line';
-  if (techName.includes('tsdb')) return 'fas fa-chart-bar';
-  
-  // DevOps & CI/CD
-  if (techName.includes('jenkins')) return 'fas fa-tools';
-  if (techName.includes('bitbucket')) return 'fab fa-bitbucket';
-  if (techName.includes('pipeline')) return 'fas fa-code-branch';
-  if (techName.includes('liquibase')) return 'fas fa-tint';
-  
-  // Security & Authentication
-  if (techName.includes('jwt')) return 'fas fa-key';
-  if (techName.includes('auth')) return 'fas fa-lock';
-  if (techName.includes('security')) return 'fas fa-shield-alt';
-  
-  // Architecture & Patterns
-  if (techName.includes('microservice')) return 'fas fa-cubes';
-  if (techName.includes('spi')) return 'fas fa-plug';
-  if (techName.includes('reactive')) return 'fas fa-water';
-  if (techName.includes('jar')) return 'fas fa-archive';
-  if (techName.includes('loading')) return 'fas fa-cog';
-  
-  // Web Technologies
-  if (techName.includes('canvas')) return 'fas fa-palette';
-  if (techName.includes('api')) return 'fas fa-link';
-  
-  // Game Development
-  if (techName.includes('game')) return 'fas fa-gamepad';
-  if (techName.includes('logic')) return 'fas fa-brain';
-  
-  // Data & Structures
-  if (techName.includes('data structures')) return 'fas fa-project-diagram';
-  if (techName.includes('algorithm')) return 'fas fa-calculator';
-  if (techName.includes('indexing')) return 'fas fa-sort';
-  
-  // Generic fallback
-  if (techName.includes('programming')) return 'fas fa-code';
-  if (techName.includes('frontend')) return 'fas fa-desktop';
-  if (techName.includes('backend')) return 'fas fa-server';
-  
-  return 'fas fa-cog';
+  if (name.includes('api') || name.includes('rest')) return CommandLineIcon;
+  if (name.includes('database') || name.includes('sql')) return CircleStackIcon;
+  if (name.includes('performance') || name.includes('optimization')) return BoltIcon;
+  if (name.includes('monitoring') || name.includes('analytics')) return ChartBarIcon;
+  if (name.includes('config') || name.includes('management')) return CogIcon;
+  if (name.includes('server') || name.includes('backend')) return ServerIcon;
+  return CodeBracketIcon; // Default icon
 };
 
 export function ProjectsGrid() {
@@ -127,33 +50,43 @@ export function ProjectsGrid() {
     : projects;
 
   return (
-    <section id="projects" className="py-24">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="section-spacing">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-6xl mx-auto"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="container-glass"
         >
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <FolderOpenIcon className="w-8 h-8 text-accent" />
-            <h2 className="text-3xl md:text-4xl font-bold text-center">
-              Projects
-            </h2>
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <FolderOpenIcon className="w-8 h-8 text-accent" />
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Projects
+              </h2>
+            </div>
+            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-6"></div>
+            
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              A selection of projects showcasing my expertise in backend engineering, 
+              system design, and performance optimization.
+            </p>
           </div>
-          
-          <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            A selection of projects showcasing my expertise in backend engineering, 
-            system design, and performance optimization.
-          </p>
 
-          {/* Filter buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {/* Filter buttons with glass styling */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-3 mb-12"
+          >
             <Button
               variant={activeFilter === '' ? 'primary' : 'secondary'}
               size="sm"
               onClick={clearFilters}
+              className="glass-button"
             >
               <StarIcon className="w-4 h-4 mr-2" />
               All
@@ -164,13 +97,14 @@ export function ProjectsGrid() {
                 variant={activeFilter === tag ? 'primary' : 'secondary'}
                 size="sm"
                 onClick={() => setActiveFilter(tag)}
+                className="glass-button"
               >
                 {tag}
               </Button>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Projects grid */}
+          {/* Projects grid with enhanced glass cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project, index) => {
               const ProjectIcon = getProjectIcon(project.name);
@@ -184,74 +118,75 @@ export function ProjectsGrid() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="bg-secondary/60 backdrop-blur-sm rounded-lg p-6 border border-border hover:border-primary/50 transition-all duration-300 h-full hover:shadow-lg group-hover:scale-[1.02]">
+                  <div className="glass-card hover:shadow-liquid-hover transition-all duration-300 h-full group-hover:scale-[1.02] group-hover:-translate-y-1">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className="p-2 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-colors">
-                          <ProjectIcon className="w-5 h-5 text-accent" />
+                        <div className="p-3 bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl group-hover:from-accent/30 group-hover:to-primary/30 transition-all duration-300 border border-accent/20">
+                          <ProjectIcon className="w-6 h-6 text-accent" />
                         </div>
-                        <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors">
-                          {project.name}
-                        </h3>
-                      </div>
-                      {project.status && (
-                        <div className="flex items-center gap-1">
-                          {project.status === 'live' ? (
-                            <>
-                              <CheckBadgeIcon className="w-4 h-4 text-success" />
-                              <span className="px-2 py-1 rounded-full text-xs font-medium bg-success/20 text-success border border-success/30">
-                                {project.status}
-                              </span>
-                            </>
-                          ) : (
-                            <>
-                              <ClockIcon className="w-4 h-4 text-warn" />
-                              <span className="px-2 py-1 rounded-full text-xs font-medium bg-warn/20 text-warn border border-warn/30">
-                                {project.status}
-                              </span>
-                            </>
+                        <div>
+                          <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors">
+                            {project.name}
+                          </h3>
+                          {project.status && (
+                            <div className="flex items-center gap-1 mt-1">
+                              <div className={`w-2 h-2 rounded-full ${project.status === 'live' ? 'bg-green-400' : 'bg-yellow-400'}`}></div>
+                              <p className="text-xs text-muted-foreground capitalize">{project.status}</p>
+                            </div>
                           )}
                         </div>
-                      )}
+                      </div>
                     </div>
                     
-                    <p className="text-muted-foreground mb-4 group-hover:text-foreground transition-colors">
+                    <p className="text-muted-foreground mb-6 group-hover:text-foreground transition-colors leading-relaxed">
                       {project.summary}
                     </p>
-                    
-                    <div className="space-y-4">
-                      <div>
-                        <div className="flex items-center gap-2 mb-3">
-                          <BoltIcon className="w-4 h-4 text-accent" />
-                          <h4 className="text-sm font-medium text-muted-foreground">Key Outcomes</h4>
-                        </div>
-                        <ul className="space-y-2">
-                          {project.outcomes.map((outcome, outcomeIndex) => (
-                            <li key={outcomeIndex} className="text-sm text-muted-foreground flex items-start gap-2 group-hover:text-foreground transition-colors">
-                              <ChevronRightIcon className="w-3 h-3 text-accent mt-0.5 flex-shrink-0" />
-                              {outcome}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <div className="flex items-center gap-2 mb-3">
-                          <CodeBracketIcon className="w-4 h-4 text-primary" />
-                          <h4 className="text-sm font-medium text-muted-foreground">Technologies</h4>
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                          {project.stack.map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className="flex items-center gap-1 px-2 py-1 bg-muted/50 hover:bg-muted rounded text-xs font-medium text-muted-foreground border border-border hover:border-accent/50 transition-all duration-300 group-hover:scale-105"
-                            >
-                              <i className={`${getTechIcon(tech)} text-sm`}></i>
-                              {tech}
-                            </span>
+
+                    {/* Key outcomes with glass styling */}
+                    {project.outcomes && project.outcomes.length > 0 && (
+                      <div className="mb-6">
+                        <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                          <ChartBarIcon className="w-4 h-4 text-accent" />
+                          Key Outcomes
+                        </h4>
+                        <div className="space-y-2">
+                          {project.outcomes.slice(0, 3).map((outcome, idx) => (
+                            <div key={idx} className="glass-subtle rounded-lg p-3 border border-accent/10">
+                              <p className="text-sm text-foreground">{outcome}</p>
+                            </div>
                           ))}
                         </div>
                       </div>
+                    )}
+
+                    {/* Tech stack with enhanced styling */}
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                        <CogIcon className="w-4 h-4 text-primary" />
+                        Tech Stack
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.stack.map((tech, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium border border-primary/20 hover:bg-primary/20 hover:scale-105 transition-all duration-300 cursor-default"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-border/50">
+                      {project.tags.map((tag, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-1 bg-accent/10 text-accent rounded-md text-xs font-medium border border-accent/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </motion.div>
@@ -259,18 +194,32 @@ export function ProjectsGrid() {
             })}
           </div>
 
-          {/* No projects message */}
-          {filteredProjects.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-center py-12"
-            >
-              <FolderOpenIcon className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-              <p className="text-lg text-muted-foreground mb-2">No projects found</p>
-              <p className="text-sm text-muted-foreground">Try adjusting your filters</p>
-            </motion.div>
-          )}
+          {/* Call to action */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center mt-12"
+          >
+            <div className="glass-subtle rounded-2xl p-6 md:p-8">
+              <RocketLaunchIcon className="w-12 h-12 text-accent mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                Interested in collaborating?
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                I'm always excited to work on new challenging projects and innovative solutions.
+              </p>
+              <Button
+                variant="primary"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group"
+              >
+                <span>Let's Talk</span>
+                <RocketLaunchIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

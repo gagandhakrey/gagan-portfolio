@@ -222,3 +222,42 @@
     hsla(var(--primary), 0.8) 0%, 
     hsla(var(--accent), 0.8) 100%);
 } 
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections have proper spacing for fixed header */
+@media (min-width: 768px) {
+  .section-offset {
+    scroll-margin-top: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-offset {
+    scroll-margin-top: 64px;
+  }
+}
+
+/* Navigation specific styles */
+.nav-backdrop {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Mobile menu animation improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus visible for better accessibility */
+.focus-visible:focus-visible {
+  outline: 2px solid theme('colors.primary.DEFAULT');
+  outline-offset: 2px;
+} 

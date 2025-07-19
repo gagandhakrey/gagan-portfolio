@@ -41,7 +41,7 @@ export function AchievementsSection() {
   const technicalAchievements = achievements.slice(3);
 
   return (
-    <section id="achievements" className="section-spacing">
+    <section id="achievements" className="section-offset section-spacing">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

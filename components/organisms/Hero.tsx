@@ -36,7 +36,7 @@ export function Hero() {
   const CurrentIcon = ROTATING_TITLES[index].icon;
 
   return (
-    <section id="hero" className="relative flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+          <section id="hero" className="section-offset relative flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
       <div className="container-glass text-center max-w-5xl">
         <div className="space-y-8 md:space-y-12">
           <motion.div

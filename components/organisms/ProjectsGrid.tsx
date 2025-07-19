@@ -265,7 +265,7 @@ export const ProjectsGrid = () => {
   ];
 
   return (
-    <section id="projects" className="section-spacing">
+    <section id="projects" className="section-offset section-spacing">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -207,7 +207,7 @@ const getTechIcon = (tech: string) => {
 
 export function ExperienceTimeline() {
   return (
-    <section id="experience" className="section-spacing overflow-hidden">
+    <section id="experience" className="section-offset section-spacing overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -12,7 +12,12 @@ This portfolio showcases Gagan Dhakrey's expertise in backend engineering, syste
 - **Accessibility First**: WCAG 2.1 AA compliant with reduced motion support
 - **SEO Optimized**: Structured data, meta tags, and semantic HTML
 - **Dark-First Design**: Beautiful dark theme with smooth animations
-- **Responsive**: Mobile-first design that works on all devices
+- **Responsive Navigation**: 
+  - Desktop: Horizontal navigation bar with active section highlighting
+  - Mobile: Hamburger menu with smooth slide-down overlay
+  - Smart device detection (mobile/tablet/desktop)
+  - Smooth scrolling between sections
+- **Mobile-First Responsive**: Optimized layouts for all device sizes
 - **Type Safe**: Full TypeScript coverage with strict mode
 - **Form Validation**: Contact form with Zod schema validation
 - **Content Management**: JSON-based content for easy updates
@@ -46,6 +51,9 @@ This portfolio showcases Gagan Dhakrey's expertise in backend engineering, syste
 │   ├── en/              # English content
 │   └── types.ts         # Content type definitions
 ├── hooks/               # Custom React hooks
+│   ├── useActiveSections.ts    # Section visibility tracking
+│   ├── useMobileDetection.ts   # Device type detection
+│   └── useReducedMotion.ts     # Motion preference handling
 ├── lib/                 # Utility functions
 ├── store/               # Zustand stores
 ├── public/              # Static assets

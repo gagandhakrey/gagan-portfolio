@@ -23,6 +23,16 @@ export default {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
+          50: 'hsl(220 100% 95%)',
+          100: 'hsl(220 100% 90%)',
+          200: 'hsl(220 100% 85%)',
+          300: 'hsl(220 100% 80%)',
+          400: 'hsl(220 100% 75%)',
+          500: 'hsl(220 100% 70%)',
+          600: 'hsl(220 100% 65%)',
+          700: 'hsl(220 100% 60%)',
+          800: 'hsl(220 100% 55%)',
+          900: 'hsl(220 100% 50%)',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -35,6 +45,16 @@ export default {
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
+          50: 'hsl(280 100% 95%)',
+          100: 'hsl(280 100% 90%)',
+          200: 'hsl(280 100% 85%)',
+          300: 'hsl(280 100% 80%)',
+          400: 'hsl(280 100% 75%)',
+          500: 'hsl(280 100% 70%)',
+          600: 'hsl(280 100% 65%)',
+          700: 'hsl(280 100% 60%)',
+          800: 'hsl(280 100% 55%)',
+          900: 'hsl(280 100% 50%)',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',

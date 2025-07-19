@@ -23,7 +23,7 @@ import { meta } from '@/content';
 
 export function ContactSection() {
   return (
-    <section id="contact" className="section-spacing">
+    <section id="contact" className="section-offset section-spacing">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -48,14 +48,14 @@ export function ContactSection() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-8"
+              className="space-y-6 md:space-y-8"
             >
               {/* Primary Contact */}
               <div className="glass-card hover:shadow-lg transition-all duration-300 group">
@@ -69,14 +69,14 @@ export function ContactSection() {
                 <div className="space-y-4">
                   <a 
                     href={`mailto:${meta.email}`}
-                    className="flex items-center gap-4 p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-all duration-300 group/item"
+                    className="flex items-center gap-3 md:gap-4 p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-all duration-300 group/item min-w-0"
                   >
-                    <div className="p-2 bg-accent/20 rounded-lg group-hover/item:bg-accent/30 transition-colors">
+                    <div className="p-2 bg-accent/20 rounded-lg group-hover/item:bg-accent/30 transition-colors flex-shrink-0">
                       <EnvelopeIcon className="w-5 h-5 text-accent" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <p className="text-foreground font-medium group-hover/item:text-accent transition-colors">
+                      <p className="text-foreground font-medium group-hover/item:text-accent transition-colors break-all">
                         {meta.email}
                       </p>
                     </div>
@@ -84,12 +84,12 @@ export function ContactSection() {
 
                   <a 
                     href={`tel:${meta.phone}`}
-                    className="flex items-center gap-4 p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-all duration-300 group/item"
+                    className="flex items-center gap-3 md:gap-4 p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-all duration-300 group/item min-w-0"
                   >
-                    <div className="p-2 bg-primary/20 rounded-lg group-hover/item:bg-primary/30 transition-colors">
+                    <div className="p-2 bg-primary/20 rounded-lg group-hover/item:bg-primary/30 transition-colors flex-shrink-0">
                       <PhoneIcon className="w-5 h-5 text-primary" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-sm text-muted-foreground">Phone</p>
                       <p className="text-foreground font-medium group-hover/item:text-primary transition-colors">
                         {meta.phone}
@@ -108,21 +108,21 @@ export function ContactSection() {
                   </h3>
                 </div>
                 
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <a 
                     href={meta.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition-all duration-300 group/item border border-blue-500/20 hover:border-blue-500/40"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition-all duration-300 group/item border border-blue-500/20 hover:border-blue-500/40 min-w-0"
                   >
-                    <div className="p-2 bg-blue-500/20 rounded-lg group-hover/item:bg-blue-500/30 transition-colors">
+                    <div className="p-2 bg-blue-500/20 rounded-lg group-hover/item:bg-blue-500/30 transition-colors flex-shrink-0">
                       <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-sm text-muted-foreground">LinkedIn</p>
-                      <p className="text-foreground font-medium group-hover/item:text-blue-400 transition-colors">
+                      <p className="text-foreground font-medium group-hover/item:text-blue-400 transition-colors truncate">
                         Professional Profile
                       </p>
                     </div>
@@ -156,7 +156,7 @@ export function ContactSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-8"
+              className="space-y-6 md:space-y-8"
             >
               <div className="glass-card hover:shadow-lg transition-all duration-300">
                 <div className="flex items-center gap-3 mb-6">
@@ -198,30 +198,30 @@ export function ContactSection() {
                   </h3>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-orange-500/10 hover:bg-orange-500/20 transition-colors">
-                    <i className="fab fa-java text-orange-400"></i>
-                    <span className="text-sm text-foreground">Java & Spring Boot</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-orange-500/10 hover:bg-orange-500/20 transition-colors min-w-0">
+                    <i className="fab fa-java text-orange-400 flex-shrink-0"></i>
+                    <span className="text-sm text-foreground truncate">Java & Spring Boot</span>
                   </div>
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition-colors">
-                    <i className="fas fa-cubes text-blue-400"></i>
-                    <span className="text-sm text-foreground">Microservices</span>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition-colors min-w-0">
+                    <i className="fas fa-cubes text-blue-400 flex-shrink-0"></i>
+                    <span className="text-sm text-foreground truncate">Microservices</span>
                   </div>
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-green-500/10 hover:bg-green-500/20 transition-colors">
-                    <i className="fas fa-database text-green-400"></i>
-                    <span className="text-sm text-foreground">MySQL & Redis</span>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-green-500/10 hover:bg-green-500/20 transition-colors min-w-0">
+                    <i className="fas fa-database text-green-400 flex-shrink-0"></i>
+                    <span className="text-sm text-foreground truncate">MySQL & Redis</span>
                   </div>
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 transition-colors">
-                    <i className="fas fa-stream text-purple-400"></i>
-                    <span className="text-sm text-foreground">Apache Kafka</span>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 transition-colors min-w-0">
+                    <i className="fas fa-stream text-purple-400 flex-shrink-0"></i>
+                    <span className="text-sm text-foreground truncate">Apache Kafka</span>
                   </div>
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-yellow-500/10 hover:bg-yellow-500/20 transition-colors">
-                    <i className="fab fa-aws text-yellow-400"></i>
-                    <span className="text-sm text-foreground">AWS Cloud</span>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-yellow-500/10 hover:bg-yellow-500/20 transition-colors min-w-0">
+                    <i className="fab fa-aws text-yellow-400 flex-shrink-0"></i>
+                    <span className="text-sm text-foreground truncate">AWS Cloud</span>
                   </div>
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 transition-colors">
-                    <i className="fab fa-docker text-cyan-400"></i>
-                    <span className="text-sm text-foreground">Docker</span>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 transition-colors min-w-0">
+                    <i className="fab fa-docker text-cyan-400 flex-shrink-0"></i>
+                    <span className="text-sm text-foreground truncate">Docker</span>
                   </div>
                 </div>
               </div>

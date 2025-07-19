@@ -67,8 +67,8 @@ export function AchievementsSection() {
           {/* Key Achievements Grid with enhanced glass cards */}
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {keyAchievements.map((achievement, index) => {
-              const IconComponent = getAchievementIcon(achievement.icon);
-              const colorClass = getCategoryColor(achievement.category);
+              const IconComponent = getAchievementIcon(achievement.icon || 'star');
+              const colorClass = getCategoryColor(achievement.category || '');
               
               return (
                 <motion.div
@@ -135,7 +135,7 @@ export function AchievementsSection() {
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {technicalAchievements.map((achievement, index) => {
-                  const IconComponent = getAchievementIcon(achievement.icon);
+                  const IconComponent = getAchievementIcon(achievement.icon || 'star');
                   
                   return (
                     <motion.div

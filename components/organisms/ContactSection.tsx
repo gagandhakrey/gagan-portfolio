@@ -200,28 +200,28 @@ export function ContactSection() {
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center gap-2 p-2 rounded-lg bg-orange-500/10 hover:bg-orange-500/20 transition-colors">
-                    <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <i className="fab fa-java text-orange-400"></i>
                     <span className="text-sm text-foreground">Java & Spring Boot</span>
                   </div>
                   <div className="flex items-center gap-2 p-2 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition-colors">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <i className="fas fa-cubes text-blue-400"></i>
                     <span className="text-sm text-foreground">Microservices</span>
                   </div>
                   <div className="flex items-center gap-2 p-2 rounded-lg bg-green-500/10 hover:bg-green-500/20 transition-colors">
-                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <i className="fas fa-database text-green-400"></i>
                     <span className="text-sm text-foreground">MySQL & Redis</span>
                   </div>
                   <div className="flex items-center gap-2 p-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 transition-colors">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                    <i className="fas fa-stream text-purple-400"></i>
                     <span className="text-sm text-foreground">Apache Kafka</span>
                   </div>
                   <div className="flex items-center gap-2 p-2 rounded-lg bg-yellow-500/10 hover:bg-yellow-500/20 transition-colors">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                    <span className="text-sm text-foreground">Docker & AWS</span>
+                    <i className="fab fa-aws text-yellow-400"></i>
+                    <span className="text-sm text-foreground">AWS Cloud</span>
                   </div>
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-pink-500/10 hover:bg-pink-500/20 transition-colors">
-                    <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
-                    <span className="text-sm text-foreground">Payment Systems</span>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 transition-colors">
+                    <i className="fab fa-docker text-cyan-400"></i>
+                    <span className="text-sm text-foreground">Docker</span>
                   </div>
                 </div>
               </div>

@@ -128,7 +128,7 @@ export function ContactSection() {
                     </div>
                   </a>
 
-                  <a 
+                  {/* <a 
                     href={meta.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -142,10 +142,10 @@ export function ContactSection() {
                     <div>
                       <p className="text-sm text-muted-foreground">GitHub</p>
                       <p className="text-foreground font-medium group-hover/item:text-gray-400 transition-colors">
-                        Code Portfolio
+                        Projects & Code
                       </p>
                     </div>
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </motion.div>

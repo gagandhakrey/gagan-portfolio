@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { 
   UserIcon,
   AcademicCapIcon,
@@ -103,6 +104,13 @@ const getTechIcon = (tech: string) => {
 };
 
 export function AboutSection() {
+  const [mounted, setMounted] = useState(false);
+
+  // Prevent hydration mismatch by only rendering Font Awesome icons after mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section id="about" className="section-offset section-spacing">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -254,7 +262,11 @@ export function AboutSection() {
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       className="flex items-center gap-1 px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20 hover:bg-accent/20 hover:scale-105 transition-all duration-300 cursor-default"
                     >
-                      <i className={`${getTechIcon(tech)} text-sm`}></i>
+                      {mounted ? (
+                        <i className={`${getTechIcon(tech)} text-sm`}></i>
+                      ) : (
+                        <div className="w-3 h-3 bg-accent/30 rounded-full animate-pulse" />
+                      )}
                       {tech}
                     </motion.span>
                   ))}

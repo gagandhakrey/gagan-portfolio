@@ -277,9 +277,10 @@ export const ProjectsGrid = () => {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-6">
               <CodeBracketIcon className="w-8 h-8 text-accent" />
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Featured Projects
-              </h2>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-500">
+  Featured Projects
+</h2>
+
             </div>
             <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-6"></div>
             
@@ -332,7 +333,7 @@ export const ProjectsGrid = () => {
                             <ProjectIcon className="w-6 h-6 text-accent" />
                           </div>
                           <div>
-                            <h3 className="text-xl font-semibold text-primary group-hover:text-accent transition-colors">
+                            <h3 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors">
                               {project.name}
                             </h3>
                             {project.status && (
@@ -369,14 +370,14 @@ export const ProjectsGrid = () => {
                       {/* Tech stack with enhanced styling */}
                       <div className="mb-6">
                         <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-                          <CogIcon className="w-4 h-4 text-primary" />
+                          <CogIcon className="w-4 h-4 text-accent" />
                           Tech Stack
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {project.stack.map((tech, idx) => (
                             <span
                               key={idx}
-                              className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium border border-primary/20 hover:bg-primary/20 hover:scale-105 transition-all duration-300 cursor-default"
+                              className="flex items-center gap-1 px-3 py-1 bg-secondary/20 text-foreground rounded-full text-xs font-medium border border-border hover:bg-secondary/40 hover:scale-105 transition-all duration-300 cursor-default"
                             >
                               <i className={`${getTechIcon(tech)} text-sm`}></i>
                               {tech}

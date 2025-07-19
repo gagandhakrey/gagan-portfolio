@@ -1,0 +1,52 @@
+[
+  {
+    "role": "Software Development Engineer 2",
+    "company": "Cashfree Payments",
+    "location": "Bengaluru, India",
+    "type": "Payment gateway and related technology company",
+    "start": "2024-03",
+    "end": "Present",
+    "impacts": [
+      "Built a plugin-based Spring Boot supporting hot-pluggable third-party gateways and routers via SPI and dynamic JAR loading with modular microservices and runtime extension support using custom class loading for scalable and extensible payment processing",
+      "Furthered database performance by removing low-cardinality indexes and refining non-selective queries",
+      "Developed custom class loading for dynamic discovery and registration of payment gateways and routers without service restarts, enhancing extensibility and scalability",
+      "Optimized router's primary API, reducing latency from ~200ms to ~80ms (60% reduction) by restructuring transactional code, implementing caching, optimizing indexing, and eliminating N+1 queries",
+      "Furthered system scalability and throughput using reactive programming and multithreading with non-blocking I/O, asynchronous execution, and parallel processing to efficiently handle network and I/O-bound workloads",
+      "Implemented success-based dynamic routing via TSDB, improving transaction success rates by ~12% through real-time analysis and intelligent path selection",
+      "Mentored 2 new joiners through comprehensive KT sessions, onboarding guidance, and skill-building support; encouraged ownership and proactive upskilling, accelerating their integration and growth"
+    ],
+    "stack": ["Java", "Spring Boot", "MySQL", "Redis", "Kafka", "SQS", "SNS", "Docker", "Datadog", "Grafana", "Temporal", "TSDB", "Reactive Programming"]
+  },
+  {
+    "role": "Software Development Engineer 1", 
+    "company": "Cashfree Payments",
+    "location": "Bengaluru, India",
+    "type": "Payment gateway and related technology company",
+    "start": "2022-07",
+    "end": "2024-03",
+    "impacts": [
+      "Spearheaded the development of router from scratch, creating multiple microservices utilizing Spring Boot, Designed and executed the complete architecture for the project",
+      "Integrated Liquibase, Circuit Breaker, Unleash, Datadog, app level metrics utilizing Grafana, and alerting systems",
+      "Designed and implemented an event-driven CDC pipeline using Maxwell and Apache Kafka to capture payment and refund events, integrating SQS for exponential back off in payment reconciliation",
+      "Deployed caching strategies across multiple layers using Write-Through and Read-Through Cache to improve performance and ensure consistent database results",
+      "Identified and remediated a critical security vulnerability (CWE) by enforcing JWT-based authentication and ID validation, ensuring secure access control and data integrity",
+      "Built a centralized reconciliation service using Spring Boot and integrated Temporal to fetch and aggregate settlement data from multiple payment aggregators, enabling unified merchant settlement reports",
+      "Led the upgrade of tech stack, including transitioning from MySQL 5.7 to 8, Java 11 to 17, and migrating from Jenkins to Bitbucket Pipelines"
+    ],
+    "stack": ["Java", "Spring Boot", "MySQL", "Apache Kafka", "Maxwell", "SQS", "Redis", "Liquibase", "Datadog", "Grafana", "Temporal", "JWT", "Docker", "Bitbucket Pipelines"]
+  },
+  {
+    "role": "Software Intern",
+    "company": "London Strategy & Consulting Group", 
+    "location": "Remote",
+    "type": "LS&CG drives strategy, consulting, audit, and law with digital innovation and expertise",
+    "start": "2021-05",
+    "end": "2021-07",
+    "impacts": [
+      "Gained initial experience in web application development by collaborating with the team, implementing solutions, and resolving customer issues",
+      "Worked with HTML, CSS, JavaScript, Express, Node.js and MongoDB to build web applications",
+      "Collaborated on implementing digital solutions for client requirements"
+    ],
+    "stack": ["HTML", "CSS", "JavaScript", "Express", "Node.js", "MongoDB"]
+  }
+] 

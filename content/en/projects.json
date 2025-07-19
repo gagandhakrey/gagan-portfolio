@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Plugin-based Payment Router",
+    "slug": "payment-router",
+    "summary": "Scalable Spring Boot application supporting hot-pluggable third-party gateways and routers via SPI and dynamic JAR loading.",
+    "stack": ["Java", "Spring Boot", "SPI", "Dynamic JAR Loading", "Microservices", "Custom Class Loading"],
+    "outcomes": ["Hot-pluggable architecture", "Runtime extension support", "Zero-downtime gateway updates", "Scalable payment processing"],
+    "tags": ["Payment Processing", "Plugin Architecture", "Microservices"],
+    "status": "live"
+  },
+  {
+    "name": "API Performance Optimization",
+    "slug": "api-optimization", 
+    "summary": "Router API optimization reducing latency from ~200ms to ~80ms through transactional code restructuring and caching.",
+    "stack": ["Java", "Spring Boot", "Redis", "MySQL", "Database Indexing", "Reactive Programming"],
+    "outcomes": ["60% latency reduction", "Eliminated N+1 queries", "Improved caching strategy", "Enhanced throughput"],
+    "tags": ["Performance", "API Optimization", "Caching"],
+    "status": "live"
+  },
+  {
+    "name": "Event-Driven CDC Pipeline",
+    "slug": "cdc-pipeline",
+    "summary": "Payment and refund event capture system using Maxwell and Apache Kafka with SQS integration for reconciliation.",
+    "stack": ["Apache Kafka", "Maxwell", "SQS", "Spring Boot", "Event-Driven Architecture"],
+    "outcomes": ["Real-time event capture", "Exponential backoff reconciliation", "Scalable event processing", "Unified settlement reports"],
+    "tags": ["Event-Driven", "CDC", "Payment Processing"],
+    "status": "live"
+  },
+  {
+    "name": "Sorting Algorithm Visualizer",
+    "slug": "sorting-visualizer",
+    "summary": "A web app with a speed-controlled UI for visualizing sorting algorithms with interactive controls and animations.",
+    "stack": ["HTML", "CSS", "JavaScript", "Canvas API", "Animations"],
+    "outcomes": ["Interactive visualization", "Speed control", "Multiple algorithms", "Educational tool"],
+    "tags": ["Algorithms", "Visualization", "Education"],
+    "status": "college-project"
+  },
+  {
+    "name": "Tic TAC Toe",
+    "slug": "tic-tac-toe",
+    "summary": "A web-based game leveraging data structures for game logic and state management with clean UI.",
+    "stack": ["HTML", "CSS", "JavaScript", "Data Structures", "Game Logic"],
+    "outcomes": ["Interactive gameplay", "Clean UI", "Efficient game logic", "State management"],
+    "tags": ["Game Development", "Data Structures", "Web Development"],
+    "status": "college-project"
+  },
+  {
+    "name": "Yelp-Camp",
+    "slug": "yelp-camp",
+    "summary": "A Node.js based website with authentication, image uploads, and user comments for campground reviews.",
+    "stack": ["Node.js", "Express", "MongoDB", "Authentication", "Image Upload", "EJS"],
+    "outcomes": ["User authentication", "Image upload functionality", "Comment system", "Full CRUD operations"],
+    "tags": ["Full Stack", "Web Development", "Authentication"],
+    "status": "college-project"
+  }
+] 

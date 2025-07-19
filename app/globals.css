@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 98%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 220 100% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 200 100% 70%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 220 100% 60%;
+    --radius: 1rem;
+    --glass-bg: 255 255 255 / 0.1;
+    --glass-border: 255 255 255 / 0.2;
+    --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  }
+
+  .dark {
+    --background: 220 27% 8%;
+    --foreground: 0 0% 98%;
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 220 100% 70%;
+    --primary-foreground: 220 27% 8%;
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 13% 18%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 200 100% 80%;
+    --accent-foreground: 220 27% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 22%;
+    --input: 220 13% 18%;
+    --ring: 220 100% 70%;
+    --glass-bg: 255 255 255 / 0.05;
+    --glass-border: 255 255 255 / 0.1;
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground antialiased;
+    background: linear-gradient(135deg, 
+      hsl(var(--background)) 0%, 
+      hsl(220 30% 85%) 25%,
+      hsl(200 80% 90%) 50%,
+      hsl(180 60% 85%) 75%,
+      hsl(var(--background)) 100%);
+  }
+  
+  .dark body {
+    background: linear-gradient(135deg, 
+      hsl(220 27% 8%) 0%, 
+      hsl(220 25% 12%) 25%,
+      hsl(215 25% 15%) 50%,
+      hsl(210 25% 12%) 75%,
+      hsl(220 27% 8%) 100%);
+  }
+  
+  /* iOS-style scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glassmorphism utilities */
+  .glass {
+    background: rgba(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(var(--glass-border));
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .glass-card {
+    @apply glass rounded-3xl p-6;
+  }
+  
+  .glass-button {
+    @apply glass rounded-full transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+  
+  .glass-subtle {
+    background: rgba(var(--glass-bg));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(var(--glass-border));
+  }
+
+  /* Modern button styles */
+  .btn-primary {
+    @apply glass-button bg-gradient-to-r from-primary via-primary to-accent text-primary-foreground shadow-xl hover:shadow-2xl font-semibold inline-flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 transition-all duration-300 text-sm px-6 py-3;
+  }
+  
+  .btn-secondary {
+    @apply glass-button border-0 bg-white/10 hover:bg-white/20 backdrop-blur-md text-foreground font-medium inline-flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 transition-all duration-300 text-sm px-6 py-3;
+  }
+  
+  .btn-ghost {
+    @apply text-foreground/80 hover:text-foreground hover:bg-white/5 backdrop-blur-sm rounded-full font-medium inline-flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 transition-all duration-300 text-sm px-4 py-2;
+  }
+  
+  /* Responsive containers */
+  .container-glass {
+    @apply glass-card max-w-7xl mx-auto;
+  }
+  
+  .section-spacing {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  @apply absolute -top-10 left-6 z-50 bg-primary text-white px-4 py-2 rounded-md focus:top-6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+} 

@@ -1,0 +1,39 @@
+{
+  "title": "Gagan Dhakrey — Software Engineer | Microservices Architecture | Performance Optimization",
+  "description": "Software Engineer specializing in high-performance backend systems, microservices, and payment processing. Founded scalable, plugin-based payment solutions at Cashfree Payments. Gem Award recipient with expertise in Java, Spring Boot, and system optimization.",
+  "url": "https://gagan.dev",
+  "author": "Gagan Dhakrey",
+  "email": "dhakreygagan@gmail.com",
+  "phone": "8445954150",
+  "location": "Koramangala, Bengaluru 560034, India",
+  "github": "https://github.com/gagandhakrey",
+  "linkedin": "https://linkedin.com/in/gagan-dhakrey-2551631b4",
+  "twitter": "https://twitter.com/gagandhakrey",
+  "keywords": [
+    "Software Engineer",
+    "Microservices Architecture", 
+    "Performance Optimization",
+    "Java",
+    "Spring Boot",
+    "Payment Processing",
+    "Kafka",
+    "Redis", 
+    "MySQL",
+    "Distributed Systems",
+    "System Design",
+    "Backend Engineering",
+    "Plugin Architecture",
+    "Cashfree Payments",
+    "API Optimization",
+    "Reactive Programming",
+    "Database Optimization"
+  ],
+  "summary": "Software Engineer specializing in high-performance backend systems, microservices, and payment processing. Founded scalable, plugin-based payment solutions, redesigned APIs to reduce latency, and optimized database performance for large-scale systems. Risked critical improvements to boost system efficiency. Proficient in Java, Spring Boot, and debugging, with a strong focus on secure and scalable system design. Gem Award recipient with a solid foundation in software optimization and architectural best practices.",
+  "education": {
+    "institution": "Indian Institute of Technology Varanasi",
+    "degree": "B.Tech",
+    "cgpa": "8.26",
+    "duration": "07/2018 - 06/2022",
+    "location": "Varanasi, India"
+  }
+} 

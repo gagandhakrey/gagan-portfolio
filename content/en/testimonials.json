@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Sarah Johnson",
+    "role": "Engineering Manager",
+    "company": "Fintech Corp",
+    "content": "Gagan is an exceptional backend engineer who consistently delivers high-quality, scalable solutions. His expertise in system design and performance optimization has been invaluable to our team.",
+    "avatar": "/images/testimonials/sarah.jpg"
+  },
+  {
+    "name": "Michael Chen",
+    "role": "CTO",
+    "company": "E-commerce Platform",
+    "content": "Working with Gagan was a game-changer for our architecture. His deep understanding of distributed systems and ability to optimize for performance helped us scale to handle millions of users.",
+    "avatar": "/images/testimonials/michael.jpg"
+  },
+  {
+    "name": "Emily Rodriguez",
+    "role": "Senior Developer",
+    "company": "Startup Inc",
+    "content": "Gagan's technical leadership and mentorship have been instrumental in our team's growth. His clean code practices and architectural insights have elevated our entire engineering culture."
+  }
+] 

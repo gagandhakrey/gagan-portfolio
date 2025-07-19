@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Building High-Performance Microservices",
+    "slug": "high-performance-microservices",
+    "excerpt": "A deep dive into designing and implementing microservices that can handle millions of requests per second with sub-millisecond latency.",
+    "publishedAt": "2024-01-15",
+    "tags": ["Microservices", "Performance", "Architecture"],
+    "readTime": 12
+  },
+  {
+    "title": "Event-Driven Architecture Patterns",
+    "slug": "event-driven-architecture",
+    "excerpt": "Exploring different patterns for building scalable, loosely-coupled systems using event-driven architecture.",
+    "publishedAt": "2023-11-20",
+    "tags": ["Event-Driven", "Architecture", "Scalability"],
+    "readTime": 8
+  },
+  {
+    "title": "Database Optimization Strategies",
+    "slug": "database-optimization",
+    "excerpt": "Practical techniques for optimizing database performance, from query tuning to indexing strategies.",
+    "publishedAt": "2023-09-10",
+    "tags": ["Database", "Performance", "Optimization"],
+    "readTime": 15
+  }
+] 

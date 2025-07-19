@@ -1,0 +1,56 @@
+[
+  {
+    "title": "JEE Advanced",
+    "subtitle": "All India Rank (AIR) 5107",
+    "metric": "General Category",
+    "year": 2018
+  },
+  {
+    "title": "Gem Award",
+    "subtitle": "Highest Engineering Excellence Award",
+    "metric": "Cashfree Payments",
+    "year": 2024
+  },
+  {
+    "title": "Internshala Recognition",
+    "subtitle": "Outstanding Performer",
+    "metric": "Campus Ambassador Program",
+    "year": 2021
+  },
+  {
+    "title": "API Performance Optimization",
+    "subtitle": "Router Latency Reduction",
+    "metric": "60% improvement",
+    "year": 2024
+  },
+  {
+    "title": "Transaction Success Rate",
+    "subtitle": "Dynamic Routing via TSDB",
+    "metric": "12% improvement",
+    "year": 2024
+  },
+  {
+    "title": "Database Performance",
+    "subtitle": "Query Optimization",
+    "metric": "Significant improvement",
+    "year": 2023
+  },
+  {
+    "title": "System Architecture",
+    "subtitle": "Plugin-based Payment Router",
+    "metric": "From scratch",
+    "year": 2023
+  },
+  {
+    "title": "Team Mentoring",
+    "subtitle": "New Joiners Guidance",
+    "metric": "2 engineers",
+    "year": 2024
+  },
+  {
+    "title": "Tech Stack Upgrade",
+    "subtitle": "MySQL & Java Versions",
+    "metric": "Led migration",
+    "year": 2023
+  }
+] 

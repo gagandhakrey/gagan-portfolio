@@ -1,6 +1,8 @@
 export interface ExperienceItem { 
   role: string; 
-  company: string; 
+  company: string;
+  location?: string;
+  type?: string;
   start: string; 
   end?: string; 
   impacts: string[]; 

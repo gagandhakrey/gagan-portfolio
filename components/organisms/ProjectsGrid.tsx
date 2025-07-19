@@ -272,9 +272,9 @@ export const ProjectsGrid = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="container-glass"
+          className="relative backdrop-blur-2xl bg-white/5 dark:bg-white/5 border border-white/10 dark:border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/10 before:via-transparent before:to-accent/5 before:pointer-events-none"
         >
-          <div className="text-center mb-12">
+                      <div className="relative z-10 text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-6">
               <CodeBracketIcon className="w-8 h-8 text-accent" />
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-500">
@@ -290,7 +290,7 @@ export const ProjectsGrid = () => {
           </div>
 
           {/* Enhanced filter buttons */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
+          <div className="relative z-10 flex flex-wrap justify-center gap-2 mb-12">
             {filters.map((filterOption) => (
               <button
                 key={filterOption.value}
@@ -311,6 +311,7 @@ export const ProjectsGrid = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
+            className="relative z-10"
           >
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProjects.map((project, index) => {
@@ -326,10 +327,10 @@ export const ProjectsGrid = () => {
                     custom={index}
                     className="group"
                   >
-                    <div className="glass-card hover:shadow-liquid-hover transition-all duration-300 h-full group-hover:scale-[1.02] group-hover:-translate-y-1">
+                    <div className="relative backdrop-blur-xl bg-white/5 dark:bg-white/5 border border-white/10 dark:border-white/10 rounded-2xl p-6 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-500 h-full group-hover:scale-[1.02] group-hover:-translate-y-1 group-hover:bg-white/10 dark:group-hover:bg-white/10 group-hover:border-white/20 dark:group-hover:border-white/20 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/10 before:to-transparent before:opacity-0 group-hover:before:opacity-100 before:transition-opacity before:duration-500 before:pointer-events-none">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center gap-3">
-                          <div className="p-3 bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl group-hover:from-accent/30 group-hover:to-primary/30 transition-all duration-300 border border-accent/20">
+                          <div className="relative p-3 backdrop-blur-md bg-gradient-to-br from-accent/20 via-white/5 to-primary/20 rounded-xl group-hover:from-accent/30 group-hover:to-primary/30 transition-all duration-300 border border-white/20 shadow-inner group-hover:shadow-lg group-hover:border-white/30">
                             <ProjectIcon className="w-6 h-6 text-accent" />
                           </div>
                           <div>
@@ -359,8 +360,8 @@ export const ProjectsGrid = () => {
                           </h4>
                           <div className="space-y-2">
                             {project.outcomes.slice(0, 3).map((outcome, idx) => (
-                              <div key={idx} className="glass-subtle rounded-lg p-3 border border-accent/10">
-                                <p className="text-sm text-foreground">{outcome}</p>
+                              <div key={idx} className="relative backdrop-blur-sm bg-white/5 dark:bg-white/5 rounded-lg p-3 border border-white/10 hover:border-white/20 hover:bg-white/10 dark:hover:bg-white/10 transition-all duration-300 shadow-inner">
+                                <p className="text-sm text-foreground relative z-10">{outcome}</p>
                               </div>
                             ))}
                           </div>
@@ -377,7 +378,7 @@ export const ProjectsGrid = () => {
                           {project.stack.map((tech, idx) => (
                             <span
                               key={idx}
-                              className="flex items-center gap-1 px-3 py-1 bg-secondary/20 text-foreground rounded-full text-xs font-medium border border-border hover:bg-secondary/40 hover:scale-105 transition-all duration-300 cursor-default"
+                              className="flex items-center gap-1 px-3 py-1 backdrop-blur-sm bg-white/10 dark:bg-white/10 text-foreground rounded-full text-xs font-medium border border-white/20 hover:bg-white/20 dark:hover:bg-white/20 hover:scale-105 hover:border-white/30 transition-all duration-300 cursor-default shadow-inner"
                             >
                               <i className={`${getTechIcon(tech)} text-sm`}></i>
                               {tech}
@@ -411,7 +412,7 @@ export const ProjectsGrid = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-center mt-16"
             >
-              <div className="glass-card max-w-2xl mx-auto">
+              <div className="relative backdrop-blur-xl bg-white/5 dark:bg-white/5 border border-white/10 dark:border-white/10 rounded-2xl p-8 max-w-2xl mx-auto hover:bg-white/10 dark:hover:bg-white/10 hover:border-white/20 dark:hover:border-white/20 transition-all duration-500 shadow-2xl hover:shadow-accent/10 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/10 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500 before:pointer-events-none">
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
                   Want to see more projects?
                 </h3>

@@ -35,12 +35,36 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans min-h-screen">
-        <div className="fixed inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10"></div>
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
-          <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '4s'}}></div>
+        {/* Enhanced liquid glass background orbs */}
+        <div className="fixed inset-0 -z-10 overflow-hidden">
+          {/* Base gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-accent/12 dark:from-primary/5 dark:to-accent/10"></div>
+          
+          {/* Animated floating orbs with liquid glass effect */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/30 to-accent/20 dark:from-primary/20 dark:to-accent/15 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-60 dark:opacity-30 animate-pulse"></div>
+          
+          <div 
+            className="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-br from-accent/25 to-primary/30 dark:from-accent/20 dark:to-primary/15 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-50 dark:opacity-30 animate-pulse" 
+            style={{animationDelay: '2s'}}
+          ></div>
+          
+          <div 
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-400/25 dark:from-primary/10 dark:to-accent/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-40 dark:opacity-20 animate-pulse" 
+            style={{animationDelay: '4s'}}
+          ></div>
+          
+          {/* Additional smaller orbs for more depth */}
+          <div 
+            className="absolute top-1/6 right-1/3 w-64 h-64 bg-gradient-to-br from-pink-400/15 to-blue-400/20 dark:from-accent/10 dark:to-primary/8 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-2xl opacity-30 dark:opacity-20 animate-pulse" 
+            style={{animationDelay: '1s'}}
+          ></div>
+          
+          <div 
+            className="absolute bottom-1/6 left-1/6 w-80 h-80 bg-gradient-to-br from-indigo-400/20 to-cyan-400/15 dark:from-primary/8 dark:to-accent/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-35 dark:opacity-25 animate-pulse" 
+            style={{animationDelay: '3s'}}
+          ></div>
         </div>
+        
         <Header />
         {children}
       </body>

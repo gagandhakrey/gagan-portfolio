@@ -41,22 +41,24 @@ export function ThemeToggleGroup() {
   }
 
   return (
-    <div className="glass-subtle rounded-full p-1 flex items-center relative">
-      {/* Background indicator */}
+    <div className="glass-subtle rounded-full p-1.5 flex items-center relative shadow-liquid hover:shadow-liquid-hover transition-all duration-300">
+      {/* Enhanced background indicator with gradient */}
       <motion.div
-        className="absolute inset-1 bg-primary/20 rounded-full"
+        className="absolute inset-1.5 rounded-full"
+        style={{
+          background: theme === 'light' 
+            ? 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%)'
+            : 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%)',
+          boxShadow: '0 4px 16px rgba(120, 119, 198, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+        }}
         initial={false}
         animate={{
-          x: theme === 'light' ? 0 : 40,
+          x: theme === 'light' ? 0 : 36,
         }}
         transition={{
           type: 'spring',
-          stiffness: 300,
+          stiffness: 400,
           damping: 30,
-        }}
-        style={{
-          width: '2rem',
-          height: '1.75rem',
         }}
       />
       
@@ -64,7 +66,7 @@ export function ThemeToggleGroup() {
       <motion.button
         onClick={() => setTheme('light')}
         className={`relative z-10 p-2 rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
-          theme === 'light' ? 'text-primary' : 'text-foreground/60 hover:text-foreground'
+          theme === 'light' ? 'text-white' : 'text-foreground/60 hover:text-foreground'
         }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -78,7 +80,7 @@ export function ThemeToggleGroup() {
       <motion.button
         onClick={() => setTheme('dark')}
         className={`relative z-10 p-2 rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
-          theme === 'dark' ? 'text-primary' : 'text-foreground/60 hover:text-foreground'
+          theme === 'dark' ? 'text-white' : 'text-foreground/60 hover:text-foreground'
         }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}

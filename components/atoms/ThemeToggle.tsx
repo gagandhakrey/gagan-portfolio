@@ -33,7 +33,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="glass-button p-3 w-12 h-12 flex items-center justify-center">
+      <div className="glass-button p-3 w-12 h-12 flex items-center justify-center shadow-liquid">
         <div className="w-5 h-5 bg-foreground/20 rounded-full animate-pulse" />
       </div>
     );
@@ -42,8 +42,8 @@ export function ThemeToggle() {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="glass-button p-3 hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 group"
-      whileHover={{ scale: 1.05 }}
+      className="glass-button p-3 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 group shadow-liquid hover:shadow-liquid-hover"
+      whileHover={{ scale: 1.05, y: -2 }}
       whileTap={{ scale: 0.95 }}
       initial={false}
       animate={{
@@ -52,7 +52,10 @@ export function ThemeToggle() {
       transition={{
         type: 'spring',
         stiffness: 200,
-        damping: 10,
+        damping: 15,
+      }}
+      style={{
+        background: 'linear-gradient(135deg, rgba(var(--glass-bg)) 0%, rgba(255, 255, 255, 0.1) 100%)',
       }}
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
       title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
